@@ -14,4 +14,61 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <profiles>
+        <!-- JDK Detection -->
+        <!-- Single JDK Activation -->
+        <profile>
+            <id>jdk-18</id>
+            <activation>
+                <jdk>18</jdk>
+            </activation>
+        </profile>
+
+        <!-- Multiple JDK Activation -->
+        <profile>
+            <id>jdk-17-11</id>
+            <activation>
+                <jdk>[17, 11]</jdk>
+            </activation>
+        </profile>
+
+        <!-- OS Detection -->
+        <!-- MacOS Activation -->
+        <profile>
+            <id>macos</id>
+            <activation>
+                <os>
+                    <name>Mac OS X</name>
+                    <family>mac</family>
+                </os>
+            </activation>
+        </profile>
+
+        <!-- Linux Activation -->
+        <profile>
+            <id>linux</id>
+            <activation>
+                <os>
+                    <name>Linux</name>
+                    <family>unix</family>
+                </os>
+            </activation>
+        </profile>
+
+        <!-- Windows Activation -->
+        <profile>
+            <id>windows</id>
+            <activation>
+                <os>
+                    <family>windows</family>
+                </os>
+            </activation>
+        </profile>
+
+        <!-- Profile Without Detection -->
+        <profile>
+            <id>without-detection</id>
+        </profile>
+    </profiles>
+
 </project>
